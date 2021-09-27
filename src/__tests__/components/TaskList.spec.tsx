@@ -54,7 +54,7 @@ describe('App Page', () => {
         value: 'Desafio ReactJS Ignite'
       }
     });
-    
+
     fireEvent.click(addTaskButton);
 
     const addedFirstTaskTitle = screen.getByText('Desafio ReactJS Ignite');
@@ -97,6 +97,7 @@ describe('App Page', () => {
   })
 
   it('should be able to check a task', () => {
+
     render(<TaskList />);
 
     const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
@@ -115,8 +116,8 @@ describe('App Page', () => {
       }
     });
     fireEvent.click(addTaskButton);
-
     const [addedFirstTask, addedSecondTask] = screen.getAllByTestId('task');
+
 
     if (addedFirstTask.firstChild) {
       fireEvent.click(addedFirstTask.firstChild)
@@ -127,5 +128,8 @@ describe('App Page', () => {
 
     expect(addedSecondTask).toBeInTheDocument();
     expect(addedSecondTask).not.toHaveClass('completed');
+
+
+
   })
 })
